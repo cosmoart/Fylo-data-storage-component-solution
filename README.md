@@ -71,11 +71,11 @@ Users should be able to:
 
 ### What I learned
 
-It was an interesting challenge because it had to use the &lt;progress> element, which had two main problems:
+It was an interesting challenge because it had to use the `<progress>` element, which had two main problems:
 
 #### 1. Styling the progress bar
 
-It was my first time styling a &lt;progress> element, so the [css trick blog](https://css-tricks.com/html5-progress-element/) where this is discussed was very helpful.
+It was my first time styling a `<progress>` element, so the [css trick blog](https://css-tricks.com/html5-progress-element/) where this is discussed was very helpful.
 
 This is the final css used for the progress bar:
 
@@ -116,7 +116,7 @@ progress::after {
 
 Looking at the accessibility tab of the devtools I noticed that the maximum and minimum values were 0 and that the "value" was missing, so I decided to investigate and I found some aria attributes that solve this problem: the [aria-valuemin](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-valuemin), the [aria-valuemax](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-valuemax), and the [aria-valuenow](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-valuenow).
 
-&lt;progress> element before the aria attributes:
+`<progress>` element before the aria attributes:
 
 ```html
 <progress id="progress" max="1000" value="815"></progress>
@@ -124,7 +124,7 @@ Looking at the accessibility tab of the devtools I noticed that the maximum and 
 
 ![Accessibility tab before](./images/problem-before.png)
 
-&lt;progress> element after the aria attributes:
+`<progress>` element after the aria attributes:
 
 ```html
 <progress id="progress" max="1000" value="815" aria-valuemin="0" aria-valuemax="1000" aria-valuenow="815"></progress>
@@ -150,5 +150,5 @@ Looking at the accessibility tab of the devtools I noticed that the maximum and 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-[live-page]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[solution-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
+[live-page]: https://cosmoart.github.io/Fylo-data-storage-component-solution/
+[solution-url]: https://www.frontendmentor.io/solutions/fylo-data-storage-component-solution-MukDLb57VZ
