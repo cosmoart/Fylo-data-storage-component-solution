@@ -1,0 +1,207 @@
+/* ==== VAR ============ */
+:root {
+    /* Primary colors */
+    --Gradient: linear-gradient(90deg, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+
+    /* Neutral colors */
+    --PaleBlue: hsl(243, 100%, 93%);
+    --GrayishBlue: hsl(229, 7%, 55%);
+    --DarkBlue: hsl(228, 56%, 26%);
+    --VeryDarkBlue: hsl(229, 57%, 11%);
+}
+
+/* ==== ATTRIBUTION ==== */
+.attribution {
+    font-size: 0.7rem;
+    text-align: center;
+    font-weight: 700;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+}
+
+.attribution:hover {
+    opacity: 1;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* ==== CHALLENGE ====== */
+body {
+    font-size: 14px;
+    font-family: "Raleway", sans-serif;
+    background: var(--VeryDarkBlue) url("./images/bg-mobile.png") 0% 100%
+        no-repeat;
+    background-size: 100% 100%;
+    color: var(--PaleBlue);
+    min-height: 100vh;
+    padding: 2rem;
+    box-sizing: border-box;
+    display: flex;
+}
+main {
+    max-width: 19rem;
+    margin: auto;
+    display: flex;
+    flex-flow: nowrap column;
+    gap: 1.5rem;
+}
+.fylo {
+    padding: 2.2rem;
+    border-radius: 10px 85px 10px 10px;
+    background-color: var(--DarkBlue);
+}
+.fylo > img {
+    width: 8.5rem;
+    margin-bottom: 1.5rem;
+}
+.fylo > div {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+}
+.fylo > div img {
+    object-fit: contain;
+}
+.fylo div div {
+    border-radius: 10px;
+    background: var(--VeryDarkBlue);
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.progress {
+    border-radius: 10px;
+    background-color: var(--DarkBlue);
+    padding: 2rem;
+    position: relative;
+}
+.gbleft {
+    width: max-content;
+    margin: 0;
+    position: absolute;
+    bottom: calc(-2rem);
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    color: var(--VeryDarkBlue);
+    padding: 14px 1.3rem;
+    border-radius: 10px;
+    font-weight: 700;
+}
+.gbleft p {
+    vertical-align: super;
+    margin: 0;
+    font-size: 13px;
+    display: inline-block;
+    opacity: 0.7;
+    margin-left: 8px;
+    text-transform: uppercase;
+}
+.progress label {
+    width: 100%;
+    margin-bottom: 14px;
+    text-align: center;
+    display: inline-block;
+}
+.gbleft strong {
+    font-size: 2rem;
+}
+progress {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    position: relative;
+    height: 19px;
+}
+progress::-webkit-progress-bar {
+    border-radius: 1rem;
+    background-color: hsla(229, 57%, 11%, 0.603);
+}
+progress::-webkit-progress-value {
+    border-radius: 1rem;
+    display: inline-block;
+    height: 13px;
+    vertical-align: middle;
+    background-image: var(--Gradient);
+    margin: 3px;
+}
+progress::after {
+    content: "";
+    width: 9px;
+    height: 9px;
+    position: absolute;
+    top: 5px;
+    right: 18.5%;
+    border-radius: 50%;
+    background-color: var(--PaleBlue);
+}
+.gigas {
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0 14px 0;
+}
+.gigas p {
+    margin: 0;
+    font-size: 13px;
+}
+@media screen and (min-width: 40em) {
+    main {
+        flex-flow: nowrap row;
+        max-width: none;
+        align-items: flex-end;
+        width: 100%;
+        max-width: 57rem;
+    }
+    body {
+        background: var(--VeryDarkBlue) url("./images/bg-desktop.png") 0% 100%
+            no-repeat;
+        background-size: 100% 53%;
+    }
+    .progress {
+        width: 100%;
+        padding: 2rem;
+    }
+    .progress label {
+        text-align: left;
+    }
+    progress {
+        margin: 0;
+    }
+    .fylo {
+        width: 58%;
+    }
+    .fylo div {
+        margin-top: 13px;
+    }
+    .fylo img {
+        margin-bottom: 0;
+    }
+    .gbleft {
+        top: -2rem;
+        bottom: auto;
+        transform: translate(-8px, -20px) scale(1.1);
+        right: 2rem;
+        left: auto;
+    }
+    .gbleft::after {
+        content: "";
+        clip-path: polygon(0 0, 100% 100%, 100% 0);
+        position: absolute;
+        bottom: -16px;
+        right: 0;
+        width: 41px;
+        height: 30px;
+        background: white;
+    }
+    .gigas {
+        margin: 10px 0;
+    }
+}
